@@ -183,7 +183,7 @@
   .pillrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px;}
   .pill{font-size:11.5px;font-weight:700;color:var(--text2);background:var(--paper);border:1px solid var(--line);border-radius:100px;padding:5px 11px;}
 
-  /* ---------- aIQ ladder ---------- */
+  /* ---------- AIQ ladder ---------- */
   .ladder{display:flex;flex-direction:column-reverse;gap:6px;}
   .rung{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:11px 16px;cursor:default;transition:.2s;box-shadow:0 4px 14px -10px rgba(15,24,56,.3);}
   .rung:hover{transform:translateX(6px);border-color:var(--cyan);}
@@ -287,6 +287,39 @@
   .tbl td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top;line-height:1.45;}
   .tbl td b{color:var(--ink);} .tbl a{color:var(--cyan-d);font-weight:700;text-decoration:none;} .tbl a:hover{text-decoration:underline;}
 
+  /* ---------- KT v2 · larger type + wider fit (content slides) ---------- */
+  .inner{max-width:1340px;}
+  .slide{padding:42px 54px 72px;}
+  .lead{font-size:18.5px;}
+  .card .t{font-size:19px;} .card .d{font-size:14.5px;} .card li{font-size:14px;}
+  .fdetail h4{font-size:21px;} .fdetail p{font-size:16px;} .fdetail .who{font-size:12.5px;}
+  .fstep .ft{font-size:15px;} .fstep .fd{font-size:12.5px;} .fstep .fi{font-size:27px;}
+  .fnode .nm{font-size:14.5px;} .fnode .ico{font-size:25px;}
+  table.tbl{font-size:13.5px;} .tbl th{font-size:12.5px;}
+  .tile .tn{font-size:15.5px;} .tile .tx{font-size:12.5px;} .tile .ti{font-size:26px;}
+  .agtile .agt{font-size:16px;} .agtile .agd{font-size:12.5px;} .agtile .agn{font-size:24px;}
+  .acard .an{font-size:14.5px;} .acard .ad{font-size:12px;}
+  .banner{font-size:15px;} .banner .ic{font-size:24px;}
+  .rung .nm{font-size:15.5px;} .rung .ds{font-size:12.5px;}
+  .stat .n{font-size:42px;} .stat .l{font-size:12px;}
+  .trow .wt{font-size:14px;} .trow .wh{font-size:11px;}
+  .scen .st{font-size:16.5px;} .scen .qa{font-size:13.5px;}
+  .eyebrow{font-size:13px;} .section .sub{font-size:19px;}
+  /* single-line section headings + trademark mark */
+  .section h2{white-space:nowrap;}
+  .section h2 br{display:none;}
+  /* standardized section dividers · heading is the hero, number a quiet badge */
+  .section .num{font-size:clamp(34px,3.4vw,46px);line-height:1;margin-bottom:10px;
+    -webkit-text-fill-color:initial;color:var(--cyan-d);background:none;
+    display:inline-flex;align-items:center;justify-content:center;min-width:64px;height:46px;
+    padding:0 14px;border-radius:14px;background:var(--cyan-soft);border:1px solid #F6D2C2;}
+  .section .pl{font-size:13px;letter-spacing:.24em;margin-bottom:16px;}
+  .section h2{font-size:clamp(40px,5.4vw,70px);}
+  .section .sub{margin-top:18px;}
+  .tm{font-size:.4em;vertical-align:super;font-weight:800;color:var(--cyan-d);margin-left:.04em;letter-spacing:0;}
+  @media (max-width:900px){ .section h2{white-space:normal;} }
+  @media (min-width:1700px){ .inner{max-width:1480px;} body{font-size:17px;} }
+
   @media print{.slide{opacity:1!important;position:relative!important;page-break-after:always;}.nav,.fs,.zone,.notes,.hint,.progress{display:none!important;}}
 </style>
 </head>
@@ -321,7 +354,7 @@
     <div class="agrid reveal" style="--i:1" id="agenda">
       <button class="agtile" data-jump="The people"><span class="agn">01</span><span class="agt">The people</span><span class="agd">Who to lean on · sign-off routing</span></button>
       <button class="agtile" data-jump="From brief to program"><span class="agn">02</span><span class="agt">Workflows</span><span class="agd">Match funnel · KG · delivery cycle</span></button>
-      <button class="agtile" data-jump="What we sell"><span class="agn">03</span><span class="agt">What we sell</span><span class="agd">aIQ · four personas · accelerators</span></button>
+      <button class="agtile" data-jump="What we sell"><span class="agn">03</span><span class="agt">What we sell</span><span class="agd">AIQ · four personas · accelerators</span></button>
       <button class="agtile" data-jump="Pricing"><span class="agn">04</span><span class="agt">Pricing</span><span class="agd">Bottom-up · 1st vs 2nd batch · tools</span></button>
       <button class="agtile" data-jump="Discovery"><span class="agn">05</span><span class="agt">Discovery</span><span class="agd">14 reds · the 80% gauge</span></button>
       <button class="agtile" data-jump="Patterns"><span class="agn">06</span><span class="agt">Patterns</span><span class="agd">Scenarios you'll hit often</span></button>
@@ -360,7 +393,7 @@
 <!-- 2 SECTION 01 -->
 <div class="slide section dark" data-notes="Part 1 · the people. The role is really cognitive orchestration: treat each person as a function you call, not a colleague you CC. Click each brain.">
   <div class="mesh"></div>
-  <div class="inner"><div class="num reveal">01</div><div class="pl reveal" style="--i:1">The people</div><h2 class="reveal" style="--i:2">Six brains,<br>one judgment.</h2><div class="sub reveal" style="--i:3">Don't CC everyone. Ask "whose brain do I need right now?" · then click.</div></div>
+  <div class="inner"><div class="num reveal">01</div><div class="pl reveal" style="--i:1">The people</div><h2 class="reveal" style="--i:2">Six brains, one judgment.</h2><div class="sub reveal" style="--i:3">Don't CC everyone. Ask "whose brain do I need right now?" · then click.</div></div>
 </div>
 
 <!-- 3 BRAINS (interactive) -->
@@ -369,13 +402,13 @@
     <div class="shead reveal"><div class="eyebrow">Cognitive orchestration · click a brain</div><div class="h">Who to lean on, <span class="ac">for what.</span></div></div>
     <div class="g3 reveal" style="--i:1;margin-bottom:16px;" id="brainGrid">
       <div class="card hover brain on" data-k="aashish"><div class="t">🧭 Aashish</div><div class="d"><b>Strategic framing</b></div></div>
-      <div class="card hover brain" data-k="soham"><div class="t">🔬 Soham</div><div class="d"><b>Technical reality</b></div></div>
+      <div class="card hover brain" data-k="soham"><div class="t">🔬 Soham</div><div class="d"><b>Co-founder · CPTO</b></div></div>
       <div class="card hover brain" data-k="amit"><div class="t">⚡ Amit</div><div class="d"><b>India Sales</b></div></div>
       <div class="card hover brain" data-k="suvansh"><div class="t">⚙️ Suvansh</div><div class="d"><b>Ops reality</b></div></div>
       <div class="card hover brain" data-k="tanvinder"><div class="t">🖥️ Tanvinder</div><div class="d"><b>Infra &amp; labs</b></div></div>
       <div class="card hover brain" data-k="shashi"><div class="t">🤝 Shashi</div><div class="d"><b>NP Team Lead</b></div></div>
       <div class="card hover brain" data-k="anshuman"><div class="t">🎯 Anshuman</div><div class="d"><b>Heads B2B</b></div></div>
-      <div class="card hover brain" data-k="ryan"><div class="t">🚀 Ryan</div><div class="d"><b>Co-founder</b></div></div>
+      <div class="card hover brain" data-k="ryan"><div class="t">🚀 Ryan</div><div class="d"><b>Co-founder · Sales</b></div></div>
       <div class="card hover brain" data-k="madan"><div class="t">📣 Madan</div><div class="d"><b>Growth marketing</b></div></div>
     </div>
     <div class="fdetail reveal" style="--i:2" id="brainDetail"></div>
@@ -431,22 +464,22 @@
       <div style="font-size:13px;color:var(--text2);">Nodes: <b>Programs · Accounts · Instructors · Tools · Topics</b> &nbsp;·&nbsp; drag · scroll to zoom · click a node · ⌕ search</div>
       <div style="display:flex;gap:10px;">
         <a target="_blank" rel="noopener" class="btnlink" href="https://acceler-knowledge-graph.vercel.app/" style="margin-top:0;">Open full-screen →</a>
-        <a target="_blank" rel="noopener" class="btnlink" href="../Knowledge%20Graph/curriculum-graph.html" style="margin-top:0;background:var(--indigo);">Delivered Curriculum view →</a>
+        <a target="_blank" rel="noopener" class="btnlink" href="https://acceler-knowledge-graph.vercel.app/curriculum-graph" style="margin-top:0;background:var(--indigo);">Delivered Curriculum view →</a>
       </div>
     </div>
   </div>
 </div>
 
 <!-- 6c CURRICULUM GRAPH (embedded · second view) -->
-<div class="slide" data-notes="The second Knowledge Graph view: the delivered-programs curriculum graph. The pre-sales KG on the previous slide stays as is; this layer maps everything we've actually delivered — clients to programs to modules to topics and tools. Built from the B2B AI Programs drive: 16 programs across e&, Cornerstone, Bosch, Deloitte, ETS, Lowe's, Nucleus and Yettel. Drag, zoom, search, and open full-screen.">
+<div class="slide" data-notes="The second Knowledge Graph view: the delivered-programs curriculum graph. The pre-sales KG on the previous slide stays as is; this layer maps everything we've actually delivered · clients to programs to modules to topics and tools. Built from the B2B AI Programs drive: 16 programs across e&, Cornerstone, Bosch, Deloitte, ETS, Lowe's, Nucleus and Yettel. Drag, zoom, search, and open full-screen.">
   <div class="inner" style="max-width:1260px;">
     <div class="shead reveal" style="margin-bottom:12px;"><div class="eyebrow">Knowledge Graph · second view · delivered curriculum</div><div class="h">What we've <span class="ac">delivered.</span></div></div>
     <div class="reveal" style="--i:1;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#0E1330;">
-      <iframe src="../Knowledge%20Graph/curriculum-graph.html" title="Delivered Programs Curriculum Graph" style="width:100%;height:58vh;border:0;display:block;" loading="lazy"></iframe>
+      <iframe src="https://acceler-knowledge-graph.vercel.app/curriculum-graph" title="Delivered Programs Curriculum Graph" style="width:100%;height:58vh;border:0;display:block;" loading="lazy"></iframe>
     </div>
     <div class="reveal" style="--i:2;display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:12px;flex-wrap:wrap;">
       <div style="font-size:13px;color:var(--text2);">Clients → <b>Programs → Modules → Topics</b> + Tools · 16 delivered programs.</div>
-      <a target="_blank" rel="noopener" class="btnlink" href="../Knowledge%20Graph/curriculum-graph.html" style="margin-top:0;">Open full-screen →</a>
+      <a target="_blank" rel="noopener" class="btnlink" href="https://acceler-knowledge-graph.vercel.app/curriculum-graph" style="margin-top:0;">Open full-screen →</a>
     </div>
   </div>
 </div>
@@ -475,9 +508,9 @@
 </div>
 
 <!-- 8 SECTION 03 -->
-<div class="slide section dark" data-notes="Part 3 · what we sell. Everything is positioned on the aIQ framework, then shaped into four personas. Both are interactive.">
+<div class="slide section dark" data-notes="Part 3 · what we sell. Everything is positioned on the AIQ framework, then shaped into four personas. Both are interactive.">
   <div class="mesh"></div>
-  <div class="inner"><div class="num reveal">03</div><div class="pl reveal" style="--i:1">What we sell</div><h2 class="reveal" style="--i:2">aIQ → four<br>personas.</h2><div class="sub reveal" style="--i:3">Diagnose maturity, then pitch the shape. Explore both.</div></div>
+  <div class="inner"><div class="num reveal">03</div><div class="pl reveal" style="--i:1">What we sell</div><h2 class="reveal" style="--i:2">AIQ<span class="tm">™</span> → four personas.</h2><div class="sub reveal" style="--i:3">Diagnose maturity, then pitch the shape. Explore both.</div></div>
 </div>
 
 <!-- 8a build ethos (moved here) -->
@@ -485,15 +518,15 @@
   <img src="co-4-ethos.png" alt="Build more, train less">
 </div>
 
-<!-- 8b aIQ official image -->
+<!-- 8b AIQ official image -->
 <div class="slide imgslide" data-notes="The proprietary AIQ framework · the positioning anchor in almost every proposal. Operational capability is the foundation: process maturity and data readiness. Enterprise AI readiness climbs Aware, Strategising, Organising, Executing. Evaluated at enterprise and functional levels. The next slide lets you explore the capability ladder interactively.">
   <img src="co-3-aiq.png" alt="AIQ framework">
 </div>
 
-<!-- 9 aIQ LADDER (interactive hover) -->
-<div class="slide" data-notes="aIQ · AI Quotient · is the positioning anchor in almost every deck. Two ways it appears. The capability ladder, shown here, sequences skilling from LLMs up to Deep ML, split into an Augmentation band (productivity, ROI on existing spend) and a Transformation band (building new GenAI and ML). The v2 maturity model on the right is a 2-axis grid: operational capability · process maturity and data readiness · versus enterprise readiness · aware, strategising, organising, executing. You score the client and find the bottleneck.">
+<!-- 9 AIQ LADDER (interactive hover) -->
+<div class="slide" data-notes="AIQ · AI Quotient · is the positioning anchor in almost every deck. Two ways it appears. The capability ladder, shown here, sequences skilling from LLMs up to Deep ML, split into an Augmentation band (productivity, ROI on existing spend) and a Transformation band (building new GenAI and ML). The v2 maturity model on the right is a 2-axis grid: operational capability · process maturity and data readiness · versus enterprise readiness · aware, strategising, organising, executing. You score the client and find the bottleneck.">
   <div class="inner">
-    <div class="shead reveal"><div class="eyebrow">aIQ™ · the positioning anchor</div><div class="h">Diagnose first, <span class="ac">then prescribe.</span></div></div>
+    <div class="shead reveal"><div class="eyebrow">AIQ™ · the positioning anchor</div><div class="h">Diagnose first, <span class="ac">then prescribe.</span></div></div>
     <div class="tgrid">
       <div class="reveal" style="--i:1">
         <div class="ladder">
@@ -538,7 +571,7 @@
 </div>
 
 <!-- 10b blueprint official image -->
-<div class="slide imgslide" data-notes="How a program is built from aIQ levels. Every program starts with the Mirror · a function-level AIQ diagnostic · and ends with the Commit, where everyone fills the AI Acceleration Roadmap for their top use cases. In between, modules are picked from Amplify, Agentic, and Accelerate.">
+<div class="slide imgslide" data-notes="How a program is built from AIQ levels. Every program starts with the Mirror · a function-level AIQ diagnostic · and ends with the Commit, where everyone fills the AI Acceleration Roadmap for their top use cases. In between, modules are picked from Amplify, Agentic, and Accelerate.">
   <img src="co-7-blueprint.png" alt="AIQ-based custom blueprint">
 </div>
 
@@ -560,10 +593,78 @@
   </div>
 </div>
 
+<!-- 11c AI FOR LEADERS · NEW BUILD-FIRST FORMAT -->
+<div class="slide" data-notes="The AI for Leaders program now runs a build-first format that lifted ratings from 3.5 to 4.5. Day 1 is in-person strategy with Ryan and Anshuman. Day 2 is hands-on, run by Madan: first 30 minutes he introduces himself, walks through the platform and a sample use case; then everyone splits into groups, each group has a dedicated TA present in Microsoft Teams, and they build using the Build Session Guide plus TA help until everyone completes. Kartika and Tanmaya were part of running this. Two live assets back it: the Build Lab and the Build Session Guide.">
+  <div class="inner">
+    <div class="shead reveal"><div class="eyebrow">What we sell · the new Leaders format</div><div class="h">AI for Leaders, <span class="ac">build-first.</span></div></div>
+    <div class="g2" style="gap:18px;align-items:start;">
+      <div class="reveal" style="--i:1">
+        <div class="card top" style="margin-bottom:12px;"><div class="t" style="font-size:16px;">📅 Day 1 · Strategy (in person)</div><div class="d">Led by <b>Ryan &amp; Anshuman</b> · the strategy and framing day, as before.</div></div>
+        <div class="card top"><div class="t" style="font-size:16px;">🛠️ Day 2 · Hands-on build (Madan)</div><div class="d"><ul>
+          <li><b>First 30 min:</b> Madan intro + platform walkthrough + a sample use case</li>
+          <li><b>Split into groups</b> · a dedicated <b>TA per group</b>, live in MS Teams</li>
+          <li>Build with the <b>Build Session Guide</b> + TA help until <b>everyone completes</b></li>
+        </ul></div></div>
+      </div>
+      <div class="reveal" style="--i:2">
+        <div class="stat" style="margin-bottom:14px;"><div class="n">3.5 → 4.5★</div><div class="l">Rating after the new format</div></div>
+        <div class="card" style="margin-bottom:12px;"><div class="t" style="font-size:15px;">🔗 Live assets</div><div class="d" style="margin-bottom:10px;">The build lab + the step-by-step guide groups follow.</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="btnlink" target="_blank" rel="noopener" href="https://ai-for-leaders-build-lab.vercel.app/" style="margin-top:0;">Build Lab →</a>
+            <a class="btnlink" target="_blank" rel="noopener" href="https://copilot-leadership-lab.vercel.app/pick-your-use-case" style="margin-top:0;background:var(--indigo);">Build Session Guide →</a>
+          </div>
+        </div>
+        <div class="banner" style="margin-top:0;"><span class="ic">📈</span><div>Build-first + a <b>TA per group</b> lifted completion and ratings from <b>3.5 → 4.5</b>. Kartika &amp; Tanmaya ran this.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 11d LEADERSHIP MODULE ARCHITECTURE -->
+<div class="slide" data-notes="Our standing approach to every leadership program · the question of how we visualise AI for leaders, answered. Two fixed bookends plus a menu of six choosable modules. The Mirror always opens · an AIQ diagnostic across six axes that baselines the whole room on one honest picture. The Commit always closes · a Leadership Canvas where each leader commits to an action, and that commitment is our reason to reconnect for more business. In between we pick two to four of the six · Map, Lens, X-Ray, Build, Rewire, Toolkit · chosen by where they are in their AI journey from the discovery call, internal surveys, and AIQ. We mix, match and price by the modules chosen. SMEs (the expensive, logistics-heavy bit) come in only when a module needs them; Ryan and Aashish deliver the rest.">
+  <div class="inner">
+    <div class="shead reveal"><div class="eyebrow">What we sell · the leadership operating model</div><div class="h">Two fixed bookends, <span class="ac">six you choose.</span></div></div>
+    <div class="g2 reveal" style="--i:1;margin-bottom:14px;">
+      <div class="card" style="border-top:4px solid var(--cyan);"><div class="t">🪞 The Mirror · always opens</div><div class="d"><b>AIQ diagnostic across six axes</b> · spider chart + gap view. Baselines the whole room so everyone starts from the same honest picture.</div></div>
+      <div class="card" style="border-top:4px solid var(--indigo);"><div class="t">🤝 The Commit · always closes</div><div class="d"><b>Leadership Canvas</b> workshop · public commitments + scheduled accountability follow-ups. <b>The commitment is our reconnect / renewal hook.</b></div></div>
+    </div>
+    <div class="reveal" style="--i:2">
+    <div style="font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:4px 0 8px;">Pick 2–4 of the six · by AI-journey stage (discovery · surveys · AIQ)</div>
+    <div class="g3" style="gap:12px;">
+      <div class="card hover"><div class="t" style="font-size:15.5px;">🗺️ The Map</div><div class="d" style="font-size:12.5px;"><span class="pill">Understand</span> &nbsp;Architecture literacy · LLMs, RAG, agents, build-vs-buy.</div></div>
+      <div class="card hover"><div class="t" style="font-size:15.5px;">🔍 The Lens</div><div class="d" style="font-size:12.5px;"><span class="pill">Understand</span> &nbsp;Dual-mode demos + case studies of what AI can do now.</div></div>
+      <div class="card hover"><div class="t" style="font-size:15.5px;">🩻 The X-Ray</div><div class="d" style="font-size:12.5px;"><span class="pill">Apply</span> &nbsp;Process redesign · decisions, data moves, actions.</div></div>
+      <div class="card hover"><div class="t" style="font-size:15.5px;">🛠️ The Build</div><div class="d" style="font-size:12.5px;"><span class="pill">Apply</span> &nbsp;Hands-on AI tools for real tasks · four tracks.</div></div>
+      <div class="card hover"><div class="t" style="font-size:15.5px;">🔄 The Rewire</div><div class="d" style="font-size:12.5px;"><span class="pill">Change</span> &nbsp;Operating-model shift · the structural barriers.</div></div>
+      <div class="card hover"><div class="t" style="font-size:15.5px;">🧰 The Toolkit</div><div class="d" style="font-size:12.5px;"><span class="pill">Change</span> &nbsp;Build-vs-buy, vendor &amp; governance frameworks.</div></div>
+    </div>
+    </div>
+    <div class="banner reveal" style="--i:3"><span class="ic">🧩</span><div>Mix, match &amp; <b>price by the modules chosen</b>. <b>SMEs come in only when a module needs them</b> (that's the expense + logistics); <b>Ryan &amp; Aashish deliver the rest.</b> &nbsp;<a target="_blank" rel="noopener" href="https://acceler-ruby.vercel.app/modules" style="color:var(--cyan);font-weight:800;">Live module menu →</a></div></div>
+  </div>
+</div>
+
+<!-- 11e LEADERSHIP · WORKED EXAMPLE + LIVE ASSETS -->
+<div class="slide" data-notes="A full leadership program made real · Constance. Four live assets show the spine end to end. The module menu is where you assemble the program. The Constance session deck is the actual built deck. The AIQ report is the Mirror output · the six-axis diagnostic written up for the client. The aiROI page turns it into a money story. Below, the AIQ intake form is how the Mirror gets run before a program · two live CETIN cohorts, Prague 29 to 30 June and Serbia 2 to 3 July.">
+  <div class="inner">
+    <div class="shead reveal"><div class="eyebrow">Leadership · a worked example · click to open</div><div class="h">Constance, <span class="ac">end to end.</span></div></div>
+    <div class="tiles reveal" style="--i:1;margin-bottom:14px;">
+      <a class="tile" target="_blank" rel="noopener" href="https://acceler-ruby.vercel.app/modules"><div class="ti">🧩</div><div class="tn">The Module Menu</div><div class="tx">Assemble any leadership program · 2 fixed + 6 choosable.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://acceler-ruby.vercel.app/deck/constance"><div class="ti">🎤</div><div class="tn">Constance · Session Deck</div><div class="tx">The actual built leadership session deck.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://constance-aiq-report.vercel.app/"><div class="ti">🪞</div><div class="tn">Constance · AIQ Report</div><div class="tx">The Mirror output · six-axis diagnostic, written up.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://magenta-florentine-520379.netlify.app/airoi.html"><div class="ti">💰</div><div class="tn">Constance · aiROI</div><div class="tx">The diagnostic turned into a money story.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://docs.google.com/presentation/d/1LmU7TL9uvo8J_EwBLRLfRiaANLk_fafG63qajmApuIU/edit"><div class="ti">🎬</div><div class="tn">Common Session Deck</div><div class="tx">Madan's common deck · run at the e&amp; PPF / CETIN leadership sessions.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://ai-for-leaders-build-lab.vercel.app/"><div class="ti">🧪</div><div class="tn">Build Lab</div><div class="tx">The grouped hands-on build environment.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://copilot-leadership-lab.vercel.app/pick-your-use-case"><div class="ti">📋</div><div class="tn">Build Session Guide</div><div class="tx">The step-by-step guide each group follows.</div><div class="go">OPEN →</div></a>
+    </div>
+    <div class="banner reveal" style="--i:2;margin-top:6px;background:var(--cyan-soft);color:var(--ink);border:1px solid #F6D2C2;box-shadow:none;"><span class="ic">📣</span><div><b style="color:var(--cyan-d);">e&amp; PPF · the common-session pattern.</b> We ran this <b style="color:var(--cyan-d);">shared Common Session Deck across 3–4 locations</b> (incl. Prague &amp; Serbia / CETIN), then a <b style="color:var(--cyan-d);">grouped build session</b> · learners split into groups, a TA each, building from the Build Lab + Build Session Guide.</div></div>
+    <div class="banner reveal" style="--i:3;margin-top:10px;"><span class="ic">📝</span><div>The <b>AIQ intake form runs the Mirror before the program.</b> Two live CETIN cohorts: &nbsp;<a target="_blank" rel="noopener" href="https://forms.gle/Py5WqeZq35k4BinV8" style="color:var(--cyan);font-weight:800;">Prague · 29–30 Jun →</a> &nbsp;·&nbsp; <a target="_blank" rel="noopener" href="https://forms.gle/reQJET3NCe35ie8s6" style="color:var(--cyan);font-weight:800;">Serbia · 2–3 Jul →</a></div></div>
+  </div>
+</div>
+
 <!-- 12 SECTION 04 -->
 <div class="slide section dark" data-notes="Part 4 · pricing. Bottom-up, three scenarios, never on the call, INR for India and USD for US, never mixed. The cost stack is interactive.">
   <div class="mesh"></div>
-  <div class="inner"><div class="num reveal">04</div><div class="pl reveal" style="--i:1">Pricing</div><h2 class="reveal" style="--i:2">Built<br>bottom-up.</h2><div class="sub reveal" style="--i:3">Curriculum free when internal · dry run only first time · ×2 overheads · 40% margin.</div></div>
+  <div class="inner"><div class="num reveal">04</div><div class="pl reveal" style="--i:1">Pricing</div><h2 class="reveal" style="--i:2">Built bottom-up.</h2><div class="sub reveal" style="--i:3">Curriculum free when internal · dry run only first time · ×2 overheads · 40% margin.</div></div>
 </div>
 
 <!-- 13a PRICING ENGINE -->
@@ -638,7 +739,7 @@
 <!-- 15 SECTION 05 -->
 <div class="slide section dark" data-notes="Part 5 · discovery. 33 questions, 14 non-negotiable reds. Below 80% complete, hold the proposal. The gauge is live · tick the reds.">
   <div class="mesh"></div>
-  <div class="inner"><div class="num reveal">05</div><div class="pl reveal" style="--i:1">Discovery</div><h2 class="reveal" style="--i:2">Hold below<br>80%.</h2><div class="sub reveal" style="--i:3">Tick the reds and watch the gauge. Generic proposals lose more deals than no proposals.</div></div>
+  <div class="inner"><div class="num reveal">05</div><div class="pl reveal" style="--i:1">Discovery</div><h2 class="reveal" style="--i:2">Hold below 80%.</h2><div class="sub reveal" style="--i:3">Tick the reds and watch the gauge. Generic proposals lose more deals than no proposals.</div></div>
 </div>
 
 <!-- 16 DISCOVERY GAUGE (interactive) -->
@@ -672,7 +773,7 @@
 </div>
 
 <!-- 16b LIVE DISCOVERY CHECKLIST (embedded) -->
-<div class="slide" data-notes="The full discovery checklist, live. This is the tool you actually run on every brief — it scores completeness across all 33 questions and flags the gaps. Below 80% complete, hold the proposal. It is embedded here; open it full-screen with the button.">
+<div class="slide" data-notes="The full discovery checklist, live. This is the tool you actually run on every brief · it scores completeness across all 33 questions and flags the gaps. Below 80% complete, hold the proposal. It is embedded here; open it full-screen with the button.">
   <div class="inner" style="max-width:1260px;">
     <div class="shead reveal" style="margin-bottom:12px;"><div class="eyebrow">Discovery · the live checklist</div><div class="h">Run it on <span class="ac">every brief.</span></div></div>
     <div class="reveal" style="--i:1;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff;">
@@ -688,7 +789,7 @@
 <!-- 17 SECTION 06 -->
 <div class="slide section dark" data-notes="Part 6 · patterns. Click a scenario to expand the play. Plus the mistakes that cost time.">
   <div class="mesh"></div>
-  <div class="inner"><div class="num reveal">06</div><div class="pl reveal" style="--i:1">Patterns</div><h2 class="reveal" style="--i:2">What to do<br>in the moment.</h2><div class="sub reveal" style="--i:3">Click a scenario to open the play: read, move, avoid.</div></div>
+  <div class="inner"><div class="num reveal">06</div><div class="pl reveal" style="--i:1">Patterns</div><h2 class="reveal" style="--i:2">What to do in the moment.</h2><div class="sub reveal" style="--i:3">Click a scenario to open the play: read, move, avoid.</div></div>
 </div>
 
 <!-- 18 SCENARIOS (expandable) -->
@@ -725,10 +826,10 @@
   <div class="inner">
     <div class="shead reveal"><div class="eyebrow">Part 07 · Accounts · click to filter</div><div class="h">The book you're <span class="ac">inheriting.</span></div></div>
     <div class="filt reveal" style="--i:1" id="acctFilt">
-      <button class="on" data-s="all">All 17</button><button data-s="hot">Priority</button><button data-s="del">Delivered</button><button data-s="warm">In-flight</button><button data-s="ref">Reference</button>
+      <button class="on" data-s="all">All 18</button><button data-s="hot">Priority</button><button data-s="del">Delivered</button><button data-s="warm">In-flight</button><button data-s="ref">Reference</button>
     </div>
     <div class="acct reveal" style="--i:2" id="acctGrid">
-      <div class="acard" data-s="hot"><div class="an">e& (Etisalat)<span class="tagp hot">Priority</span></div><div class="ad">UAE telco. Delivered: Builder Pro/Low/No-Code (Nov-Dec + Q1), AI for Leaders, Pilot, PPF Leaders (Hungary).</div></div>
+      <div class="acard" data-s="hot"><div class="an">e& (Etisalat)<span class="tagp hot">Priority</span></div><div class="ad">UAE telco. Delivered: Builder Pro/Low/No-Code (Nov-Dec + Q1), AI for Leaders, Pilot, PPF Leaders (Hungary). Now: <b>GT graduate-training RFP</b> + sentiment-analysis impact build (John · Ruth).</div></div>
       <div class="acard" data-s="del"><div class="an">Cornerstone<span class="tagp del">Delivered</span></div><div class="ad">Sales Team · AI for PMs · 3-hr Masterclass (4.85/5). Reseller channel.</div></div>
       <div class="acard" data-s="del"><div class="an">Bosch<span class="tagp del">Delivered</span></div><div class="ad">AI Builder Masterclass (MCP &amp; A2A). Elevate tiers proposal in-flight.</div></div>
       <div class="acard" data-s="del"><div class="an">Deloitte<span class="tagp del">Delivered</span></div><div class="ad">AI for Leaders, incl. multi-agent.</div></div>
@@ -741,6 +842,7 @@
       <div class="acard" data-s="warm"><div class="an">Voya<span class="tagp warm">In-flight</span></div><div class="ad">Finance + HR 2-day tracks + capstone. US.</div></div>
       <div class="acard" data-s="warm"><div class="an">ANSR<span class="tagp warm">In-flight</span></div><div class="ad">GCC leaders demo · Claude Code + Cowork.</div></div>
       <div class="acard" data-s="warm"><div class="an">IGT Solutions<span class="tagp warm">In-flight</span></div><div class="ad">M365 Copilot for CX teams.</div></div>
+      <div class="acard" data-s="warm"><div class="an">Diebold Nixdorf<span class="tagp warm">In-flight</span></div><div class="ad">AI for Sales. Capability-map showcase built for them.</div></div>
       <div class="acard" data-s="ref"><div class="an">Booking Holdings<span class="tagp ref">Reference</span></div><div class="ad">14 proposals → 4d/24h GenAI Eng Accelerator.</div></div>
       <div class="acard" data-s="ref"><div class="an">Edelweiss<span class="tagp ref">Reference</span></div><div class="ad">8d · 54 live hrs · blended. ₹18.2L.</div></div>
       <div class="acard" data-s="ref"><div class="an">Gryphon<span class="tagp ref">Reference</span></div><div class="ad">PE firm. FDE programme + APR add-on.</div></div>
@@ -757,7 +859,7 @@
 <!-- 20 SECTION 08 -->
 <div class="slide section dark" data-notes="Part 8 · post-sales. The role doesn't end at signature. You hand off a clean package; delivery builds, delivers and grades the content. Animated handoff, then where everything lives.">
   <div class="mesh"></div>
-  <div class="inner"><div class="num reveal">08</div><div class="pl reveal" style="--i:1">Post-sales &amp; content</div><h2 class="reveal" style="--i:2">After the<br>deal closes.</h2><div class="sub reveal" style="--i:3">Hand off intent + commercials. Delivery builds the rest.</div></div>
+  <div class="inner"><div class="num reveal">08</div><div class="pl reveal" style="--i:1">Post-sales &amp; content</div><h2 class="reveal" style="--i:2">After the deal closes.</h2><div class="sub reveal" style="--i:3">Hand off intent + commercials. Delivery builds the rest.</div></div>
 </div>
 
 <!-- 21 POST-SALES FLOW + CONTENT -->
@@ -786,10 +888,96 @@
   </div>
 </div>
 
+<!-- 21b PROGRAM LIFECYCLE (one program, end to end) -->
+<div class="slide" data-notes="One program, end to end · the full post-sales cycle we actually run, shown on the e& AI Builder Low Code 4-day cohort. It opens with Orientation and an onboarding form, then a pre-program assessment that baselines every learner. Ops stands up the virtual labs and credentials. Across the delivery days each session ships content plus a feedback form, and Day 4 adds the NPS. We close with a Closing Ceremony, a post-program assessment that pairs with the pre-test, and finally an Impact Report for the client · the renewal hook. Pre to post improvement on this cohort averaged about 88 percent.">
+  <div class="inner">
+    <div class="shead reveal"><div class="eyebrow">Post-sales · one program, end to end</div><div class="h">The full <span class="ac">program cycle.</span></div></div>
+    <div class="flow reveal" style="--i:1;margin-bottom:18px;">
+      <div class="fstep cy"><span class="day">Open</span><div class="fi">🎬</div><div class="ft">Orientation</div><div class="fd">Slides + onboarding form</div></div>
+      <div class="farr"><svg viewBox="0 0 26 14"><path class="dash" d="M1 7 H22 M17 2 L23 7 L17 12"/></svg></div>
+      <div class="fstep"><span class="day">Baseline</span><div class="fi">📋</div><div class="ft">Pre-Assess</div><div class="fd">Pre-test · every learner</div></div>
+      <div class="farr"><svg viewBox="0 0 26 14"><path class="dash" d="M1 7 H22 M17 2 L23 7 L17 12"/></svg></div>
+      <div class="fstep"><span class="day">Setup</span><div class="fi">🖥️</div><div class="ft">Labs + creds</div><div class="fd">Nuvepro VMs · API keys</div></div>
+      <div class="farr"><svg viewBox="0 0 26 14"><path class="dash" d="M1 7 H22 M17 2 L23 7 L17 12"/></svg></div>
+      <div class="fstep hl"><span class="day">Day 1–4</span><div class="fi">🎤</div><div class="ft">Deliver</div><div class="fd">Session + feedback daily</div></div>
+      <div class="farr"><svg viewBox="0 0 26 14"><path class="dash" d="M1 7 H22 M17 2 L23 7 L17 12"/></svg></div>
+      <div class="fstep"><span class="day">Close</span><div class="fi">🎓</div><div class="ft">Closing</div><div class="fd">Ceremony + NPS</div></div>
+      <div class="farr"><svg viewBox="0 0 26 14"><path class="dash" d="M1 7 H22 M17 2 L23 7 L17 12"/></svg></div>
+      <div class="fstep"><span class="day">Measure</span><div class="fi">📊</div><div class="ft">Post-Assess</div><div class="fd">Post-test vs pre</div></div>
+      <div class="farr"><svg viewBox="0 0 26 14"><path class="dash" d="M1 7 H22 M17 2 L23 7 L17 12"/></svg></div>
+      <div class="fstep gn"><span class="day">Renewal</span><div class="fi">📈</div><div class="ft">Impact Report</div><div class="fd">The reconnect hook</div></div>
+    </div>
+    <div class="stats reveal" style="--i:2">
+      <div class="stat"><div class="n">+88%</div><div class="l">Avg pre→post improvement</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Delivery days · feedback each</div></div>
+      <div class="stat"><div class="n">19</div><div class="l">Ops-sheet tabs per cohort</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Cohorts · shared OneDrive</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 21c THE OPERATIONS SHEET -->
+<div class="slide" data-notes="The live operations sheet · the single source of truth Ops runs a cohort from. This is the real e& AI Builder Low Code Cohort 2 sheet, nineteen tabs. They group into four jobs: who is in the room · learner profiles, onboarding responses, final list. The infra · VM credentials, the per-SME VM list, remaining-assignment creds, and the AI-tools-and-Nuvepro cost tab. Running the days · schedule and instructors, content changes, the NP and Ops checklists, attendance, class ratings. And proving impact · pre-test, post-test, pre-vs-post, analysis, plus Agentic Fest planning. The cost tab works out roughly four-and-a-quarter lakh all-in for this cohort.">
+  <div class="inner">
+    <div class="shead reveal"><div class="eyebrow">Post-sales · the live ops sheet · one tab per job</div><div class="h">How Ops runs <span class="ac">a cohort.</span></div></div>
+    <div class="g4 reveal" style="--i:1;gap:13px;">
+      <div class="card top"><div class="t" style="font-size:15.5px;">👥 People</div><div class="d" style="font-size:12.5px;"><ul><li>Learner Profile Analysis</li><li>Onboarding Form Responses</li><li>Final List (Cohort)</li></ul></div></div>
+      <div class="card top"><div class="t" style="font-size:15.5px;">🖥️ Infra &amp; cost</div><div class="d" style="font-size:12.5px;"><ul><li>VM Credentials</li><li>VM List (per SME)</li><li>Remaining-Assign Creds</li><li>AI Tools &amp; Nuvepro Cost</li></ul></div></div>
+      <div class="card top"><div class="t" style="font-size:15.5px;">🎬 Run the days</div><div class="d" style="font-size:12.5px;"><ul><li>Schedule &amp; Instructor</li><li>Content Changes</li><li>NP + Ops Checklists</li><li>Attendance · Class Ratings</li></ul></div></div>
+      <div class="card top"><div class="t" style="font-size:15.5px;">📊 Prove impact</div><div class="d" style="font-size:12.5px;"><ul><li>Pre Test · Post Test</li><li>Pre vs Post · Analysis</li><li>Agentic Fest Planning</li></ul></div></div>
+    </div>
+    <div class="g2 reveal" style="--i:2;margin-top:14px;align-items:stretch;">
+      <div class="card"><div class="t" style="font-size:15.5px;">💸 What infra costs (this cohort)</div><div class="d" style="font-size:13px;"><b>Nuvepro VM labs ₹3,30,000</b> (₹500/learner/day) <b>+ AI tools ₹94,953</b> (n8n, ChatGPT, OpenAI &amp; SERP keys, MS) = <b>₹4,24,953 all-in</b>. The cost tab does this math live.</div></div>
+      <div class="card top"><div class="t" style="font-size:15.5px;">🔗 Open it</div><div class="d" style="font-size:13px;"><a target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1-F--sADeQ7Fxsjdc_9_Fkqt3X9A68Y0aHy05B0a9io4/edit" style="color:var(--cyan-d);font-weight:800;">Live Operations Sheet · e&amp; Low Code Cohort 2 →</a><br/><span style="color:var(--amber)">Holds live VM passwords + API keys · internal only.</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 21d EVERY DOC, BY STAGE -->
+<div class="slide" data-notes="Every operational document for a program, in the order you use it, straight from the e& Low Code sheet. Setup docs · brochure, comms, virtual-lab setup, pre-reqs. Intake · onboarding form and pre-program assessment. Deliver · orientation slides, then each day's PPT-and-demo folder paired with its feedback form, NPS on Day 4. Close · closing-ceremony slides and the post-program assessment. Everything is archived in the cohort OneDrive · two cohorts linked. Office-form and Drive links are live; the named docs live in the OneDrive.">
+  <div class="inner">
+    <div class="shead reveal"><div class="eyebrow">Post-sales · every doc, in order · click any link</div><div class="h">The program <span class="ac">document set.</span></div></div>
+    <div class="reveal" style="--i:1">
+    <table class="tbl" style="font-size:13px;">
+      <tr><th style="width:130px;">Stage</th><th>Documents</th></tr>
+      <tr><td><b>🧱 Setup</b></td><td>Program Brochure · Communication Docs · Virtual Lab Setup · Pre-Req Doc &nbsp;<span style="color:var(--muted);">(named docs · in OneDrive)</span></td></tr>
+      <tr><td><b>📝 Intake</b></td><td>
+        <a target="_blank" rel="noopener" href="https://forms.office.com/r/GP4j4xgdNk">Onboarding Form</a> &nbsp;·&nbsp;
+        <a target="_blank" rel="noopener" href="https://forms.office.com/r/GhFMGZRUvz">Pre-Program Assessment</a></td></tr>
+      <tr><td><b>🎬 Deliver</b></td><td>Orientation Slides &nbsp;·&nbsp;
+        Day 1 <a target="_blank" rel="noopener" href="https://drive.google.com/drive/u/0/folders/1J5oD05dJCjBGkgWsep7EWgf93p7HeUbE">PPT</a>/<a target="_blank" rel="noopener" href="https://forms.office.com/r/rGQBVq2H3v">fb</a> ·
+        Day 2 <a target="_blank" rel="noopener" href="https://drive.google.com/drive/u/0/folders/1XsRGZrSZ2RLWraw943fqsf6G_6i1pAoc">PPT</a>/<a target="_blank" rel="noopener" href="https://forms.office.com/r/CanRK6UTuq">fb</a> ·
+        Day 3 <a target="_blank" rel="noopener" href="https://drive.google.com/drive/u/0/folders/1XsRGZrSZ2RLWraw943fqsf6G_6i1pAoc">PPT</a>/<a target="_blank" rel="noopener" href="https://forms.office.com/r/uxf4u3rEwz">fb</a> ·
+        Day 4 <a target="_blank" rel="noopener" href="https://drive.google.com/drive/u/0/folders/1XsRGZrSZ2RLWraw943fqsf6G_6i1pAoc">PPT</a>/<a target="_blank" rel="noopener" href="https://forms.office.com/r/rzYNJghHDW">fb + NPS</a></td></tr>
+      <tr><td><b>🎓 Close</b></td><td>Closing Ceremony Slides &nbsp;·&nbsp;
+        <a target="_blank" rel="noopener" href="https://forms.office.com/r/HauLdMDfFq">Post-Program Assessment</a></td></tr>
+      <tr><td><b>🗂️ Archive</b></td><td>
+        <a target="_blank" rel="noopener" href="https://interviewkickstarts-my.sharepoint.com/:f:/g/personal/operations_teamupwardandonward_com/IgD5nIkAUROlRro7Cs3yjrjcAen6zWdQYA_WpeQGrw6v6rc?e=nf7s3h">OneDrive · Cohort 1</a> &nbsp;·&nbsp;
+        <a target="_blank" rel="noopener" href="https://interviewkickstarts-my.sharepoint.com/:f:/g/personal/operations_teamupwardandonward_com/IgCkexaXgtjAR65ux4Zj05WcAQ227QhoT1OQiRRl8FR8Efc?e=JaGtJt">OneDrive · Cohort 2</a></td></tr>
+    </table>
+    </div>
+    <div class="banner reveal" style="--i:2"><span class="ic">📦</span><div>This is the <b>e&amp; AI Builder (Low Code) 4-day</b> set · the template every delivered program follows. Named docs (brochure, comms, orientation, closing) live in the <b>cohort OneDrive</b>.</div></div>
+  </div>
+</div>
+
+<!-- 21e ASSIGNMENTS, GRADING & PROOF -->
+<div class="slide" data-notes="The grading and proof layer. For Pro-Code programs there is a rubric template and a filled sample gradesheet · open the rubric, copy it, grade against it. Suvansh can share session recordings from past Pro and Low Code programs. After the program the Impact Report packages the outcome for the client and seeds the next conversation. The hard proof is the pre-versus-post jump · about 88 percent average improvement on the e& Low Code cohort.">
+  <div class="inner">
+    <div class="shead reveal"><div class="eyebrow">Post-sales · grading &amp; proof · click to open</div><div class="h">Assignments, grading, <span class="ac">impact.</span></div></div>
+    <div class="tiles reveal" style="--i:1">
+      <a class="tile" target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1S3bpfk_4Eswmx2gUmrIeLDZSXEMzqVJL0J9rzpI57oY/edit?gid=1880014838#gid=1880014838"><div class="ti">📐</div><div class="tn">Pro-Code Rubric</div><div class="tx">The grading rubric template · copy &amp; grade against it.</div><div class="go">OPEN →</div></a>
+      <div class="tile" style="cursor:default;"><div class="ti">✅</div><div class="tn">Sample Gradesheet</div><div class="tx">Maryam Ebrahim · a filled Post-Program gradesheet.</div><div class="go" style="color:var(--amber);">NAMED DOC</div></div>
+      <a class="tile" target="_blank" rel="noopener" href="https://docs.google.com/document/u/1/d/18LoSdgzxsxz2NilyWM3RvKuOUobLP-hRz6BMzumOnJ8/edit?tab=t.0"><div class="ti">📈</div><div class="tn">Impact Report</div><div class="tx">Post-program outcome write-up · the renewal seed.</div><div class="go">OPEN →</div></a>
+      <div class="tile" style="cursor:default;"><div class="ti">🎥</div><div class="tn">Session Recordings</div><div class="tx">Pro / Low-Code past sessions for reference.</div><div class="go" style="color:var(--amber);">ASK SUVANSH</div></div>
+    </div>
+    <div class="banner reveal" style="--i:2"><span class="ic">📊</span><div>Hard proof for the renewal conversation: the <b>pre → post jump averaged ≈ 88%</b> on the e&amp; Low Code cohort · the Impact Report is built on exactly this.</div></div>
+  </div>
+</div>
+
 <!-- 22 SECTION 09 -->
 <div class="slide section dark" data-notes="Part 9 · the assets. Everything you'll open repeatedly, as clickable tiles. The sample proposals to study, then the operational sources of truth.">
   <div class="mesh"></div>
-  <div class="inner"><div class="num reveal">09</div><div class="pl reveal" style="--i:1">The assets</div><h2 class="reveal" style="--i:2">Everything,<br>one click away.</h2><div class="sub reveal" style="--i:3">Sample proposals, then the operational hub.</div></div>
+  <div class="inner"><div class="num reveal">09</div><div class="pl reveal" style="--i:1">The assets</div><h2 class="reveal" style="--i:2">Everything, one click away.</h2><div class="sub reveal" style="--i:3">Sample proposals, then the operational hub.</div></div>
 </div>
 
 <!-- 23 SAMPLE PROPOSALS (tiles) -->
@@ -843,12 +1031,23 @@
         <a target="_blank" rel="noopener" class="lk" href="https://drive.google.com/drive/u/1/folders/1DGHonJfbG1XtuIesLNMGzQlzfz0ml5hW">1</a></td></tr>
     </table>
     </div>
-    <div class="banner reveal" style="--i:2"><span class="ic">📦</span><div>Every sample-proposal link, by track. <b>Open one per track in week 1</b> and read it against the proposal anatomy. Operational links (Tracker, Instructors, Agreements…) are on the next slide.</div></div>
+    <div class="reveal" style="--i:2">
+      <div style="font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px;">Clients behind these, by track</div>
+      <div class="pillrow">
+        <span class="pill"><a target="_blank" rel="noopener" href="https://docs.google.com/presentation/d/1f_tYK6-MxnqAIiLYcegRTgvnZdCaX8V-RnuqSR-BK9M" style="color:var(--cyan-d);font-weight:800;text-decoration:none;">🎯 Akamai · Leaders</a></span>
+        <span class="pill"><a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1-ky44a_FeoX0MYi5d2K4QIsHR5GNEQnsousQEYcOFcA" style="color:var(--cyan-d);font-weight:800;text-decoration:none;">🧭 Cornerstone · PMs</a></span>
+        <span class="pill"><a target="_blank" rel="noopener" href="https://docs.google.com/presentation/d/1T1pYU63xIyosRhCXHwz2u4K51GjteYU4JPV3U4PAyq0" style="color:var(--cyan-d);font-weight:800;text-decoration:none;">🛡️ Honeywell · Security</a></span>
+        <span class="pill">⚙️ Engineers: Everest · Edelweiss · LVT · Sony · StoneX · Gryphon · BGSW</span>
+        <span class="pill">🔧 Non-Tech: Fiserv · IGT · Voya HR · MCB · Diebold · Schneider</span>
+        <span class="pill">🎯 Leaders also: Constance · LatentView · Voya</span>
+      </div>
+    </div>
+    <div class="banner reveal" style="--i:3"><span class="ic">📦</span><div>Every sample-proposal link, by track. <b>Open one per track in week 1</b> and read it against the proposal anatomy. Operational links (Tracker, Instructors, Agreements…) are on the next slide.</div></div>
   </div>
 </div>
 
 <!-- 24 MASTER LINK INDEX (tiles) -->
-<div class="slide" data-notes="The hub. Bookmark this. Tracker is the live pipeline. Instructor Pool is where instructor matching starts. Mentor Profiles are client-ready bios. Agreements hold NDAs and POs · legal entity is Upward and Onward Inc. CSOD is a reseller channel. aIQ, Generic Decks, and Content Post-Sales round it out. If a link 403s, get access on day one.">
+<div class="slide" data-notes="The hub. Bookmark this. Tracker is the live pipeline. Instructor Pool is where instructor matching starts. Mentor Profiles are client-ready bios. Agreements hold NDAs and POs · legal entity is Upward and Onward Inc. CSOD is a reseller channel. AIQ, Generic Decks, and Content Post-Sales round it out. If a link 403s, get access on day one.">
   <div class="inner">
     <div class="shead reveal"><div class="eyebrow">Master link index · bookmark this</div><div class="h">The operational <span class="ac">hub.</span></div></div>
     <div class="tiles reveal" style="--i:1">
@@ -858,12 +1057,34 @@
       <a target="_blank" rel="noopener" class="tile" href="https://drive.google.com/drive/u/1/folders/1YOpEqySuqlUhSEQMZw_rqImCmyvwLRV2"><div class="ti">🧑‍🏫</div><div class="tn">Mentor Profiles</div><div class="tx">Client-ready one-slide bios.</div><div class="go">OPEN →</div></a>
       <a target="_blank" rel="noopener" class="tile" href="https://drive.google.com/drive/u/1/folders/1ks4DgxIDRVYYEFBRiM7MGfewjhcBV0Sr"><div class="ti">📜</div><div class="tn">Agreements</div><div class="tx">NDAs, POs, commercials. Entity: Upward and Onward Inc.</div><div class="go">OPEN →</div></a>
       <a target="_blank" rel="noopener" class="tile" href="https://drive.google.com/drive/u/1/folders/1DxuM9D2HUFEwhZCyYeQ4knQn02KCOjQC"><div class="ti">🔄</div><div class="tn">Cornerstone Resale</div><div class="tx">CSOD reseller channel · different margin + paper.</div><div class="go">OPEN →</div></a>
-      <a target="_blank" rel="noopener" class="tile" href="https://drive.google.com/drive/u/1/folders/1zV2Z2wDd-OR3CyLzv2-_mTGoJmhzTHhK"><div class="ti">🧭</div><div class="tn">aIQ Framework</div><div class="tx">Diagnostic + scoring questions.</div><div class="go">OPEN →</div></a>
+      <a target="_blank" rel="noopener" class="tile" href="https://drive.google.com/drive/u/1/folders/1zV2Z2wDd-OR3CyLzv2-_mTGoJmhzTHhK"><div class="ti">🧭</div><div class="tn">AIQ Framework</div><div class="tx">Diagnostic + scoring questions.</div><div class="go">OPEN →</div></a>
       <a target="_blank" rel="noopener" class="tile" href="https://drive.google.com/drive/u/1/folders/1EZ1tcFVofwIq8KAd1NkBZ5ebAjqh9Euc"><div class="ti">🎞️</div><div class="tn">Generic Decks</div><div class="tx">Intro / who-we-are / four-persona.</div><div class="go">OPEN →</div></a>
       <a target="_blank" rel="noopener" class="tile" href="https://acceler-pre-sales-discovery-checkli.vercel.app/"><div class="ti">✅</div><div class="tn">Discovery Checklist</div><div class="tx">The live tool · scores the brief, flags gaps.</div><div class="go">OPEN →</div></a>
       <a target="_blank" rel="noopener" class="tile" href="https://drive.google.com/drive/u/1/folders/1tUMBGWfAKPzKA4hndaDjBe9hOHzMhza2"><div class="ti">🗂️</div><div class="tn">Content (Post Sales)</div><div class="tx">All delivered program content.</div><div class="go">OPEN →</div></a>
     </div>
     <div class="banner reveal" style="--i:2"><span class="ic">🔑</span><div>Customer-facing brand is <b>Acceler</b>; legal entity is <b>Upward and Onward, Inc.</b> If a link 403s, <b>flag access on day one.</b></div></div>
+  </div>
+</div>
+
+<!-- 24b SHOWCASES & LIVE ASSETS -->
+<div class="slide" data-notes="The live things we show clients · interactive decks, build labs, sample LMS, real-impact builds, and the latest e& GT RFP solutions. Plus the recording of KT session one. These are the proof-of-capability assets; open any in a new tab.">
+  <div class="inner">
+    <div class="shead reveal"><div class="eyebrow">Showcases &amp; live assets · what we can show a client</div><div class="h">Proof of <span class="ac">capability.</span></div></div>
+    <div class="tiles reveal" style="--i:1">
+      <a class="tile" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1flUHJQsYy96FfsZf5VNZjeYcb8LfiR4U/view"><div class="ti">🎥</div><div class="tn">KT Call · Session 1</div><div class="tx">Recording of the first KT session.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://cornerstone-ondemand.vercel.app/"><div class="ti">🎤</div><div class="tn">Live Session Deck</div><div class="tx">A Cornerstone live-session deck (by Faiza).</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://ai-for-leaders-build-lab.vercel.app/"><div class="ti">🧭</div><div class="tn">AI for Leaders · Build Lab</div><div class="tx">The new build-first Leaders format.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://copilot-leadership-lab.vercel.app/pick-your-use-case"><div class="ti">📋</div><div class="tn">Leaders Build Guide</div><div class="tx">The step-by-step guide groups follow.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://ai-in-sdlc.vercel.app/#0"><div class="ti">🧑‍💻</div><div class="tn">AI in SDLC</div><div class="tx">Built for ANSR.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://osb-deck-deploy.vercel.app/ansr-osb-v3.html"><div class="ti">🤝</div><div class="tn">ANSR OSB Partnership</div><div class="tx">End-to-end India partnership deck.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://acceler-lms.vercel.app/profile"><div class="ti">🎓</div><div class="tn">Acceler LMS (sample)</div><div class="tx">End-to-end learning experience demo.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://voiceflow-insights-05.lovable.app/login"><div class="ti">📊</div><div class="tn">e& Sentiment Analysis</div><div class="tx">Real-impact build (live app) with John (L&amp;D) &amp; Ruth (HR).</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://sentiment-analysis-plum-kappa.vercel.app/"><div class="ti">📈</div><div class="tn">Sentiment · v0 build</div><div class="tx">The v0 version of the e& sentiment project.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://diebold-nixdorf.vercel.app/"><div class="ti">💼</div><div class="tn">Diebold Sales map</div><div class="tx">Capability mapping for a sales team.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://eand-rfp-executives-june-2026-v1.vercel.app/eand-rfp-executives-june-2026-v1.html"><div class="ti">📑</div><div class="tn">e& GT RFP · Executives</div><div class="tx">Graduate-training RFP solution (Jun'26).</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://e-rfp-june-2026-v1.vercel.app/e-rfp-june-2026-v1.html"><div class="ti">📑</div><div class="tn">e& GT RFP · Technical</div><div class="tx">Graduate-training technical RFP solution.</div><div class="go">OPEN →</div></a>
+    </div>
+    <div class="banner reveal" style="--i:2"><span class="ic">✨</span><div>These are the <b>"show, don't tell"</b> assets · interactive decks, build labs, a sample LMS, a real client-impact build, and the latest e& GT graduate-training RFP solutions.</div></div>
   </div>
 </div>
 
@@ -960,13 +1181,13 @@
   /* ---------- BRAINS ---------- */
   const brains={
     aashish:{n:'Aashish · Strategic framing',d:'Surfaces risk before you see it; refines positioning. Asks <b>"why are we doing this?"</b> before <b>"what to build?"</b>',w:'Ask when stuck on narrative'},
-    soham:{n:'Soham · Technical reality (CPTO)',d:'Edge cases, precision-forcing. <b>Always validate before final submission.</b> Push back in person · he wants it.',w:'Ask before client send'},
+    soham:{n:'Soham · Co-founder &amp; CPTO',d:'Co-founder, runs the <b>technical side</b>. Edge cases, precision-forcing. <b>Always validate before final submission.</b> Push back in person · he wants it.',w:'Ask before client send'},
     amit:{n:'Amit · India Sales',d:'The <b>India sales sign-off</b>. Brings commercial pressure · speed vs perfect, deal momentum. <b>Urgency is a forcing function</b> that sharpens the proposal.',w:'Ask for India sign-off'},
     suvansh:{n:'Suvansh · Ops reality',d:'Execution complexity, client day-to-day. <b>Grounds proposals in delivery reality</b> · saves you from over-promising.',w:'Ask on feasibility'},
     tanvinder:{n:'Tanvinder · Tech implementation',d:'Infra, VMs, Nuvepro, vendor mgmt. <b>Late-night problem-solving partner</b> when something breaks before delivery.',w:'Ask on infra / labs'},
     shashi:{n:'Shashi · NP Team Lead',d:'Leads New Programs. The <b>final confirm on instructor availability, guarded topics &amp; feasibility</b> · the NP Team sign-off in the match funnel.',w:'Ask for NP Team confirmation'},
     anshuman:{n:'Anshuman · Heads B2B',d:'Runs the B2B business. Also takes the <b>leadership strategy sessions</b> inside the AI Leaders program.',w:'Ask on B2B direction &amp; leadership strategy'},
-    ryan:{n:'Ryan · Co-founder',d:'Co-founder. <b>Sales sign-off for non-India regions</b>, and runs <b>leadership strategy sessions</b> in the Leaders program.',w:'Ask on non-India sign-off &amp; strategy'},
+    ryan:{n:'Ryan · Co-founder (Sales &amp; Marketing)',d:'Co-founder, runs the <b>sales &amp; marketing</b> side. <b>Sales sign-off for non-India regions</b>, and runs <b>leadership strategy sessions</b> in the Leaders program.',w:'Ask on non-India sign-off &amp; strategy'},
     madan:{n:'Madan · Growth marketing',d:'Leads growth marketing. Runs the <b>build sessions</b> in the AI Leaders program.',w:'Ask on growth &amp; the Leaders build sessions'}
   };
   function paintBrain(k){const b=brains[k]; $('brainDetail').innerHTML='<h4>'+b.n+'</h4><p>'+b.d+'</p><span class="who">'+b.w+'</span>';}
