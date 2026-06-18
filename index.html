@@ -305,6 +305,17 @@
   .trow .wt{font-size:14px;} .trow .wh{font-size:11px;}
   .scen .st{font-size:16.5px;} .scen .qa{font-size:13.5px;}
   .eyebrow{font-size:13px;} .section .sub{font-size:19px;}
+  /* keep the hint clear of the nav pill (was overlapping at 100–110% zoom) */
+  .hint{bottom:66px;font-size:11px;background:rgba(255,255,255,.74);padding:4px 12px;border-radius:100px;backdrop-filter:blur(6px);box-shadow:0 4px 14px -8px rgba(15,24,56,.28);}
+  /* slimmer nav / slide bar · scales better across zoom levels */
+  .nav{gap:6px;padding:5px 9px;bottom:12px;max-width:min(820px,92vw);flex-wrap:nowrap;}
+  .nav button{width:26px;height:26px;font-size:14px;flex-shrink:0;}
+  .nav .count{font-size:11px;padding:0 8px;white-space:nowrap;flex-shrink:0;}
+  .nav .dots{gap:4px;max-width:min(44vw,470px);}
+  .nav .dot{width:6px;height:6px;}
+  .nav .dot.active{width:18px;}
+  .fs{width:30px;height:30px;font-size:14px;bottom:14px;left:14px;}
+  .brand{padding:5px 10px;bottom:12px;right:14px;} .brand img{height:16px;}
   /* single-line section headings + trademark mark */
   .section h2{white-space:nowrap;}
   .section h2 br{display:none;}
@@ -319,6 +330,66 @@
   .tm{font-size:.4em;vertical-align:super;font-weight:800;color:var(--cyan-d);margin-left:.04em;letter-spacing:0;}
   @media (max-width:900px){ .section h2{white-space:normal;} }
   @media (min-width:1700px){ .inner{max-width:1480px;} body{font-size:17px;} }
+
+  /* ============ RESPONSIVE · tablet ============ */
+  @media (max-width:1100px){
+    .inner{max-width:100%;}
+    .slide{padding:36px 38px 72px;}
+    .g4{grid-template-columns:repeat(2,1fr);}
+    .acct{grid-template-columns:repeat(3,1fr);}
+    .tiles{grid-template-columns:repeat(3,1fr);}
+    .agrid{grid-template-columns:repeat(2,1fr);}
+  }
+  /* ============ RESPONSIVE · phone ============ */
+  @media (max-width:820px){
+    body{overflow:hidden;}
+    /* let each slide scroll vertically, anchored to the top */
+    .slide{padding:28px 20px 104px;justify-content:flex-start;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+    .slide.cover,.slide.section{justify-content:center;}
+    .inner{max-width:100%;}
+    .shead{margin-bottom:18px;}
+    /* collapse every multi-column grid */
+    .g2,.g3,.g4,.tgrid,.picker,.discwrap,.scens,.stats{grid-template-columns:1fr;}
+    .acct,.tiles,.agrid{grid-template-columns:repeat(2,1fr);}
+    /* horizontal pipelines → vertical stacks */
+    .flow{flex-direction:column;gap:10px;}
+    .flow .fstep{width:100%;}
+    .farr{transform:rotate(90deg);width:100%;height:16px;margin:-2px 0;}
+    .funnel{flex-wrap:wrap;}
+    .funnel .fnode{flex:1 1 42%;}
+    /* pricing bars + ladders read fine stacked */
+    .bar{grid-template-columns:84px 1fr 70px;gap:8px;}
+    .bar .bl{font-size:11.5px;} .bar .bv{font-size:11.5px;}
+    .ladder .rung{padding:10px 12px;}
+    /* readable type on small screens */
+    .h{font-size:clamp(24px,6.4vw,32px);}
+    .lead{font-size:16px;}
+    .section h2{white-space:normal;font-size:clamp(30px,8.6vw,46px);}
+    .cover h1{font-size:clamp(36px,10vw,52px);}
+    .card .t{font-size:17px;} .card .d{font-size:14px;} .card li{font-size:13.5px;}
+    .fdetail h4{font-size:19px;} .fdetail p{font-size:15px;}
+    table.tbl{font-size:12px;}
+    .banner{font-size:14px;flex-direction:column;align-items:flex-start;gap:8px;}
+    .stat .n{font-size:34px;}
+    /* embedded tools get more height on a phone */
+    iframe{height:62vh!important;}
+    /* declutter chrome · the floating fs button + brand pill collided with the nav */
+    .hint{display:none;}
+    .fs,.brand{display:none;}
+    .nav{max-width:94vw;}
+    .nav .dots{max-width:50vw;}
+    .zone{width:7%;}
+  }
+  @media (max-width:480px){
+    .tiles,.agrid,.acct{grid-template-columns:1fr;}
+    .funnel .fnode{flex:1 1 100%;}
+    .slide{padding:24px 15px 100px;}
+  }
+
+  /* leadership worked-example · 3-up tile grid (9 tiles → clean 3×3) */
+  .tiles3{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:820px){ .tiles3{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .tiles3{grid-template-columns:1fr;} }
 
   @media print{.slide{opacity:1!important;position:relative!important;page-break-after:always;}.nav,.fs,.zone,.notes,.hint,.progress{display:none!important;}}
 </style>
@@ -647,17 +718,18 @@
 <div class="slide" data-notes="A full leadership program made real · Constance. Four live assets show the spine end to end. The module menu is where you assemble the program. The Constance session deck is the actual built deck. The AIQ report is the Mirror output · the six-axis diagnostic written up for the client. The aiROI page turns it into a money story. Below, the AIQ intake form is how the Mirror gets run before a program · two live CETIN cohorts, Prague 29 to 30 June and Serbia 2 to 3 July.">
   <div class="inner">
     <div class="shead reveal"><div class="eyebrow">Leadership · a worked example · click to open</div><div class="h">Constance, <span class="ac">end to end.</span></div></div>
-    <div class="tiles reveal" style="--i:1;margin-bottom:14px;">
+    <div class="tiles tiles3 reveal" style="--i:1;margin-bottom:14px;">
       <a class="tile" target="_blank" rel="noopener" href="https://acceler-ruby.vercel.app/modules"><div class="ti">🧩</div><div class="tn">The Module Menu</div><div class="tx">Assemble any leadership program · 2 fixed + 6 choosable.</div><div class="go">OPEN →</div></a>
       <a class="tile" target="_blank" rel="noopener" href="https://acceler-ruby.vercel.app/deck/constance"><div class="ti">🎤</div><div class="tn">Constance · Session Deck</div><div class="tx">The actual built leadership session deck.</div><div class="go">OPEN →</div></a>
       <a class="tile" target="_blank" rel="noopener" href="https://constance-aiq-report.vercel.app/"><div class="ti">🪞</div><div class="tn">Constance · AIQ Report</div><div class="tx">The Mirror output · six-axis diagnostic, written up.</div><div class="go">OPEN →</div></a>
       <a class="tile" target="_blank" rel="noopener" href="https://magenta-florentine-520379.netlify.app/airoi.html"><div class="ti">💰</div><div class="tn">Constance · aiROI</div><div class="tx">The diagnostic turned into a money story.</div><div class="go">OPEN →</div></a>
-      <a class="tile" target="_blank" rel="noopener" href="https://docs.google.com/presentation/d/1LmU7TL9uvo8J_EwBLRLfRiaANLk_fafG63qajmApuIU/edit"><div class="ti">🎬</div><div class="tn">Common Session Deck</div><div class="tx">Madan's common deck · run at the e&amp; PPF / CETIN leadership sessions.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://docs.google.com/presentation/d/1LmU7TL9uvo8J_EwBLRLfRiaANLk_fafG63qajmApuIU/edit"><div class="ti">🎬</div><div class="tn">Common Session Deck</div><div class="tx">Madan's common deck · run at the e&amp; PPF · Yettel / CETIN leadership sessions.</div><div class="go">OPEN →</div></a>
       <a class="tile" target="_blank" rel="noopener" href="https://ai-for-leaders-build-lab.vercel.app/"><div class="ti">🧪</div><div class="tn">Build Lab</div><div class="tx">The grouped hands-on build environment.</div><div class="go">OPEN →</div></a>
       <a class="tile" target="_blank" rel="noopener" href="https://copilot-leadership-lab.vercel.app/pick-your-use-case"><div class="ti">📋</div><div class="tn">Build Session Guide</div><div class="tx">The step-by-step guide each group follows.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1LjdshQHNqCzRZagyh0FTIlEwP0uCzVHcWzqsD1CzpjY/edit?gid=22036183#gid=22036183"><div class="ti">📥</div><div class="tn">AIQ Form · filled (real)</div><div class="tx">An actual completed intake-form response · ANSR sample.</div><div class="go">OPEN →</div></a>
+      <a class="tile" target="_blank" rel="noopener" href="https://ansr-aiq-report.vercel.app/"><div class="ti">🪞</div><div class="tn">AIQ Report · real</div><div class="tx">The report that filled form produced · ANSR sample.</div><div class="go">OPEN →</div></a>
     </div>
-    <div class="banner reveal" style="--i:2;margin-top:6px;background:var(--cyan-soft);color:var(--ink);border:1px solid #F6D2C2;box-shadow:none;"><span class="ic">📣</span><div><b style="color:var(--cyan-d);">e&amp; PPF · the common-session pattern.</b> We ran this <b style="color:var(--cyan-d);">shared Common Session Deck across 3–4 locations</b> (incl. Prague &amp; Serbia / CETIN), then a <b style="color:var(--cyan-d);">grouped build session</b> · learners split into groups, a TA each, building from the Build Lab + Build Session Guide.</div></div>
-    <div class="banner reveal" style="--i:3;margin-top:10px;"><span class="ic">📝</span><div>The <b>AIQ intake form runs the Mirror before the program.</b> Two live CETIN cohorts: &nbsp;<a target="_blank" rel="noopener" href="https://forms.gle/Py5WqeZq35k4BinV8" style="color:var(--cyan);font-weight:800;">Prague · 29–30 Jun →</a> &nbsp;·&nbsp; <a target="_blank" rel="noopener" href="https://forms.gle/reQJET3NCe35ie8s6" style="color:var(--cyan);font-weight:800;">Serbia · 2–3 Jul →</a></div></div>
+    <div class="banner reveal" style="--i:2;margin-top:8px;background:var(--cyan-soft);color:var(--ink);border:1px solid #F6D2C2;box-shadow:none;"><span class="ic">📣</span><div><b style="color:var(--cyan-d);">e&amp; PPF · the common-session pattern.</b> Shared Common Session Deck across <b style="color:var(--cyan-d);">3–4 locations</b> (Prague &amp; Serbia / CETIN), then a <b style="color:var(--cyan-d);">grouped build session</b> (groups + a TA each) via the Build Lab + Build Session Guide. &nbsp;Live AIQ intake forms: <a target="_blank" rel="noopener" href="https://forms.gle/Py5WqeZq35k4BinV8" style="color:var(--cyan-d);font-weight:800;">Prague 29–30 Jun →</a> · <a target="_blank" rel="noopener" href="https://forms.gle/reQJET3NCe35ie8s6" style="color:var(--cyan-d);font-weight:800;">Serbia 2–3 Jul →</a></div></div>
   </div>
 </div>
 
@@ -826,10 +898,11 @@
   <div class="inner">
     <div class="shead reveal"><div class="eyebrow">Part 07 · Accounts · click to filter</div><div class="h">The book you're <span class="ac">inheriting.</span></div></div>
     <div class="filt reveal" style="--i:1" id="acctFilt">
-      <button class="on" data-s="all">All 18</button><button data-s="hot">Priority</button><button data-s="del">Delivered</button><button data-s="warm">In-flight</button><button data-s="ref">Reference</button>
+      <button class="on" data-s="all">All 19</button><button data-s="hot">Priority</button><button data-s="del">Delivered</button><button data-s="warm">In-flight</button><button data-s="ref">Reference</button>
     </div>
     <div class="acct reveal" style="--i:2" id="acctGrid">
-      <div class="acard" data-s="hot"><div class="an">e& (Etisalat)<span class="tagp hot">Priority</span></div><div class="ad">UAE telco. Delivered: Builder Pro/Low/No-Code (Nov-Dec + Q1), AI for Leaders, Pilot, PPF Leaders (Hungary). Now: <b>GT graduate-training RFP</b> + sentiment-analysis impact build (John · Ruth).</div></div>
+      <div class="acard" data-s="hot"><div class="an">e& (Etisalat)<span class="tagp hot">Priority</span></div><div class="ad">UAE telco. Delivered: Builder Pro/Low/No-Code (Nov-Dec + Q1), AI for Leaders, Pilot. <b>PPF Leaders sessions</b> · Hungary · Prague · <b>Serbia</b> / CETIN · Yettel. Now: <b>GT graduate-training RFP</b> + sentiment-analysis impact build (John · Ruth).</div></div>
+      <div class="acard" data-s="hot"><div class="an">LVT<span class="tagp hot">Priority · P0</span></div><div class="ad">3-day Claude Code AI-Assisted Dev Bootcamp · US. Leads Kyle Cheng · Jeevendra Singh. <a target="_blank" rel="noopener" href="https://docs.google.com/document/d/17pSnxXz5yZKWB4UjuCj6oTS3Lg25MqD5f-Lj-LnPINo/edit" style="color:var(--cyan-d);font-weight:700;">Brief →</a></div></div>
       <div class="acard" data-s="del"><div class="an">Cornerstone<span class="tagp del">Delivered</span></div><div class="ad">Sales Team · AI for PMs · 3-hr Masterclass (4.85/5). Reseller channel.</div></div>
       <div class="acard" data-s="del"><div class="an">Bosch<span class="tagp del">Delivered</span></div><div class="ad">AI Builder Masterclass (MCP &amp; A2A). Elevate tiers proposal in-flight.</div></div>
       <div class="acard" data-s="del"><div class="an">Deloitte<span class="tagp del">Delivered</span></div><div class="ad">AI for Leaders, incl. multi-agent.</div></div>
@@ -1145,7 +1218,27 @@
     syncDots(); onEnter(slides[cur]);
     if(cur>0){ const h=$('hint'); if(h) h.style.opacity=0; }
   }
-  function onEnter(s){ animCounters(s); animStack(s); }
+  function onEnter(s){ animCounters(s); animStack(s); fitSlide(s); }
+
+  /* ---------- auto-fit: scale a slide's content down so it always fits the viewport
+       (independent of browser zoom / screen size). Mobile scrolls instead. ---------- */
+  function fitSlide(s){
+    const inner=s.querySelector('.inner'); if(!inner) return;
+    inner.style.transform='';
+    if(window.innerWidth<=820) return;           // phones scroll, don't shrink
+    const cs=getComputedStyle(s);
+    const avail=s.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    const need=inner.scrollHeight;
+    if(need > avail+2){
+      const sc=Math.max(0.62, avail/need);
+      inner.style.transformOrigin='center center';
+      inner.style.transform='scale('+sc.toFixed(4)+')';
+    }
+  }
+  // re-fit the active slide whenever the viewport (or zoom) changes
+  let rzT; window.addEventListener('resize',()=>{ clearTimeout(rzT); rzT=setTimeout(()=>{
+    requestAnimationFrame(()=>fitSlide(slides[cur]));
+  },120); });
 
   // counters
   function animCounters(s){
@@ -1328,6 +1421,9 @@
   if(s0!==null){cur=Math.max(0,Math.min(total-1,parseInt(s0)));}
   slides.forEach((s,i)=>s.classList.toggle('active',i===cur));
   $('progress').style.width=((cur+1)/total*100)+'%'; $('notesC').textContent=notesArr[cur]; syncDots(); onEnter(slides[cur]);
+  // re-measure once fonts/images settle so the auto-fit is accurate on first paint
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(()=>fitSlide(slides[cur]));}
+  window.addEventListener('load',()=>fitSlide(slides[cur]));
 })();
 </script>
 </body>
